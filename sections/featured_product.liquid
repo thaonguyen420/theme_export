@@ -1,0 +1,31 @@
+{% assign collection_handle = section.settings.collection %}
+{% assign product_handle = section.settings.product %}
+{% assign collection = collections['featured-prosd'] %}
+{% assign product = all_products[product_handle] %}
+
+<section class="featured_products">
+      <h2 class="featured_porduct__heading" >
+        WOMEN'S COLLECTION
+    </h2>
+    <p>{{ collection.description  }}</p> 
+        {% render 'product-title' for collection.products as product %}
+</section>
+{% schema %}
+{
+    "name":"Featured Prosd",
+    "settings":[
+        {
+            "type":"collection",
+            "id":"colection",
+            "label":"colection"
+        }
+      
+    ],
+    "presets":[
+        {
+            "name":"Featured Prosd",
+            "category":"Product delay"
+        }
+    ]
+}
+{% endschema %}

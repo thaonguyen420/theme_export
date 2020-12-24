@@ -1,0 +1,13 @@
+
+<!-- <h1>{{ product.title }}</h1> -->
+<!-- ANCHOR general use -->
+
+<div class="product-main">
+    <a href="{{ product.url }}" class="product-title {% if has_second_image %}  product-title--has-second-image{% endif %}">
+        <img class="product-title__image" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image.alt }}">
+        <div class="product-title__info">
+            <h3 class="product-title__title">{{ product.title }}</h3>
+            <span class="product-title__price">{{ product.price | money }}</span>
+        </div>
+    </a>
+</div>
